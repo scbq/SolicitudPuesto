@@ -1,0 +1,15 @@
+<h1>Nueva Postulación para <%= @application.job_offer.title %></h1>
+
+<p>Estimado administrador,</p>
+
+<p>El usuario <strong><%= @application.user.name %></strong> (<%= @application.user.email %>) ha realizado una postulación para el puesto de <strong><%= @application.job_offer.title %></strong>.</p>
+
+<% if @application.description.present? %>
+  <p><strong>Descripción del postulante:</strong></p>
+  <p><%= @application.description %></p>
+<% end %>
+
+<p>Revisa los detalles en la plataforma de administración.</p>
+
+<p>Saludos,</p>
+<p>El equipo de SolPuesto</p>

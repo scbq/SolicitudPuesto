@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="text-center my-4">Ofertas de Trabajo</h2>
+  <%= link_to "Crear Nueva Publicación", new_job_offer_path, class: "btn btn-success btn-new-publication" if current_user.admin? %>
+
+  <div class="row">
+    <% @job_offers.each do |job_offer| %>
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">
+              <i class="fas fa-briefcase"></i>
+              <%= job_offer.title %>
+            </h5>
+            <p class="card-text"><i class="fas fa-align-left"></i> <%= job_offer.description %></p>
+          </div>
+          <div class="card-footer text-center">
+            <%= link_to "Ver", job_offer_path(job_offer), class: "btn btn-primary btn-sm" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container my-5">
+  <div class="admin-dashboard card shadow-lg p-5 bg-light rounded">
+    <h2 class="text-center mb-4">Panel de Administración - SolPuesto</h2>
+    <div class="row">
+      <!-- Botón de Crear Usuario -->
+      <div class="col-md-3 mb-3 d-flex">
+        <%= link_to "Crear Usuario", new_admin_user_path, class: "btn btn-primary btn-lg w-100 py-3 d-flex align-items-center justify-content-center shadow-sm flex-grow-1" %>
+      </div>
+
+      <!-- Botón de Crear Publicación de Empleo -->
+      <div class="col-md-3 mb-3 d-flex">
+        <%= link_to "Crear Publicación de Empleo", new_job_offer_path, class: "btn btn-secondary btn-lg w-100 py-3 d-flex align-items-center justify-content-center shadow-sm flex-grow-1" %>
+      </div>
+
+      <!-- Botón de Ver Publicaciones de Empleo -->
+      <div class="col-md-3 mb-3 d-flex">
+        <%= link_to "Ver Publicaciones de Empleo", job_offers_path, class: "btn btn-info btn-lg w-100 py-3 d-flex align-items-center justify-content-center shadow-sm flex-grow-1" %>
+      </div>
+
+      <!-- Botón de Ver Usuarios Registrados -->
+      <div class="col-md-3 mb-3 d-flex">
+        <%= link_to "Ver Usuarios Registrados", admin_users_path, class: "btn btn-success btn-lg w-100 py-3 d-flex align-items-center justify-content-center shadow-sm flex-grow-1" %>
+      </div>
+
+      <!-- Botón de Ver y Gestionar Postulaciones -->
+      <div class="col-md-3 mb-3 d-flex">
+        <%= link_to "Gestionar Postulaciones", admin_applications_path, class: "btn btn-warning btn-lg w-100 py-3 d-flex align-items-center justify-content-center shadow-sm flex-grow-1" %>
+      </div>
+    </div>
+  </div>
+</div>

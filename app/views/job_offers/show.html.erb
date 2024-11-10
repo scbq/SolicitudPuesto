@@ -1,0 +1,19 @@
+<div class="container my-4">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h2 class="card-title"><i class="fas fa-briefcase"></i> <%= @job_offer.title %></h2>
+      <p class="card-text"><i class="fas fa-align-left"></i> <%= @job_offer.description %></p>
+    </div>
+
+    <!-- Footer de la tarjeta con botones -->
+    <div class="card-footer d-flex justify-content-between flex-wrap">
+      <% if current_user.admin? %>
+        <%= link_to "Editar", edit_job_offer_path(@job_offer), class: "btn btn-warning btn-sm flex-fill m-1" %>
+        <%= link_to "Eliminar", job_offer_path(@job_offer), method: :delete, data: { confirm: "¿Estás seguro de eliminar esta oferta?" }, class: "btn btn-danger btn-sm flex-fill m-1" %>
+      <% else %>
+        <%= link_to "Postular", new_application_path(job_offer_id: @job_offer.id), class: "btn btn-success btn-sm flex-fill m-1" %>
+      <% end %>
+      <%= link_to "Volver", job_offers_path, class: "btn btn-secondary btn-sm flex-fill m-1" %>
+    </div>
+  </div>
+</div>

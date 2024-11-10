@@ -1,0 +1,20 @@
+<h2>Cambiar Contraseña</h2>
+
+<%= form_for(resource, as: resource_name, url: user_registration_path, html: { method: :put }) do |f| %>
+  <div class="mb-3">
+    <%= f.label :current_password, "Contraseña Actual" %>
+    <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :password, "Nueva Contraseña" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :password_confirmation, "Confirmar Nueva Contraseña" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+  </div>
+
+  <%= f.submit "Actualizar Contraseña", class: "btn btn-primary" %>
+<% end %>

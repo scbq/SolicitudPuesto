@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <% if user_signed_in? %>
+      <% if current_user.admin? %>
+        <%= link_to "SolPuesto", authenticated_root_path, class: "navbar-brand fw-bold text-primary" %>
+      <% else %>
+        <%= link_to "SolPuesto", job_offers_path, class: "navbar-brand fw-bold text-primary" %>
+      <% end %>
+    <% else %>
+      <%= link_to "SolPuesto", unauthenticated_root_path, class: "navbar-brand fw-bold text-primary" %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Mis Postulaciones", applications_path, class: "nav-link text-secondary" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Perfil", edit_user_registration_path, class: "nav-link text-secondary" %>
+          </li>
+          <li class="nav-item">
+            <!-- Formulario de cierre de sesión sin JavaScript -->
+            <%= form_with url: destroy_user_session_path, method: :delete, local: true do %>
+              <%= submit_tag "Cerrar sesión", class: "btn btn-danger nav-link px-3 text-white ms-2" %>
+            <% end %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Iniciar sesión", new_user_session_path, class: "nav-link text-primary" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

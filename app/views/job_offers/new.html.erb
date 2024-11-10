@@ -1,0 +1,35 @@
+<div class="container my-5">
+  <div class="card shadow p-4 mx-auto" style="max-width: 600px;">
+    <h2 class="text-center mb-4">Crear Nueva Publicación de Empleo</h2>
+    <%= form_with model: @job_offer, url: job_offers_path, local: true do |f| %>
+      <div class="mb-3">
+        <%= f.label :title, "Título", class: "form-label fw-bold" %>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-briefcase"></i></span>
+          <%= f.text_field :title, class: "form-control", placeholder: "Ingrese el título del empleo" %>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :description, "Descripción", class: "form-label fw-bold" %>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-align-left"></i></span>
+          <%= f.text_area :description, class: "form-control", placeholder: "Ingrese la descripción del empleo", rows: 4 %>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :user_id, "Usuario", class: "form-label fw-bold" %>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+          <%= f.collection_select :user_id, User.all, :id, :name, { prompt: "Seleccione un usuario" }, class: "form-select" %>
+        </div>
+      </div>
+
+      <div class="d-grid gap-2 mt-4">
+        <%= f.submit "Crear Publicación de Empleo", class: "btn btn-primary btn-lg" %>
+        <%= link_to "Volver a Publicaciones de Empleo", job_offers_path, class: "btn btn-secondary btn-lg" %>
+      </div>
+    <% end %>
+  </div>
+</div>

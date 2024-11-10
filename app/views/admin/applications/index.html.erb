@@ -1,0 +1,29 @@
+<h1>Todas las Postulaciones</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Usuario</th>
+      <th>Oferta de Trabajo</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @applications.each do |application| %>
+      <tr>
+        <td><%= application.id %></td>
+        <td><%= application.user.name %></td>
+        <td><%= application.job_offer.title %></td>
+        <td><%= application.status || "Pendiente" %></td>
+        <td>
+          <%= link_to 'Ver', admin_application_path(application), class: 'btn btn-primary' %>
+          <%= form_with(model: application, url: admin_application_path(application), method: :delete, local: true) do |form| %>
+            <%= form.submit "Eliminar", class: "btn btn-danger", data: { confirm: "¿Estás seguro de que deseas eliminar esta postulación?" } %>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

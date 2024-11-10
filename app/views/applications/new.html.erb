@@ -1,0 +1,20 @@
+<div class="container my-4">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h2 class="card-title text-center"><i class="fas fa-paper-plane"></i> Postulación a <%= @job_offer.title %></h2>
+      <%= form_with(model: @application, url: applications_path, local: true) do |f| %>
+        <%= f.hidden_field :job_offer_id, value: @job_offer.id %>
+        
+        <div class="form-group my-3">
+          <%= f.label :description, "Mensaje de postulación" %>
+          <%= f.text_area :description, class: "form-control", rows: 5, placeholder: "Escribe un mensaje para el administrador sobre tu interés en esta posición" %>
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <%= f.submit "Enviar Postulación", class: "btn btn-success flex-fill m-1" %>
+          <%= link_to "Cancelar", job_offer_path(@job_offer), class: "btn btn-secondary flex-fill m-1" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

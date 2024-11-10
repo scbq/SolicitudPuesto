@@ -1,0 +1,21 @@
+<h1>Detalles de la Postulación</h1>
+
+<p><strong>Usuario:</strong> <%= @application.user.name %></p>
+<p><strong>Email del usuario:</strong> <%= @application.user.email %></p>
+<p><strong>Oferta de Trabajo:</strong> <%= @application.job_offer.title %></p>
+<p><strong>Descripción:</strong> <%= @application.description %></p>
+<p><strong>Estado:</strong> <%= @application.status || "Pendiente" %></p>
+
+<%= form_with(url: update_status_admin_application_path(@application), method: :patch, local: true) do %>
+  <div class="form-group">
+    <label for="status">Actualizar Estado:</label>
+    <select name="status" id="status" class="form-control">
+      <option value="Aceptada">Aceptada</option>
+      <option value="Rechazada">Rechazada</option>
+      <option value="Pendiente">Pendiente</option>
+    </select>
+  </div>
+  <%= submit_tag "Actualizar", class: "btn btn-success" %>
+<% end %>
+
+<%= link_to 'Volver', admin_applications_path, class: 'btn btn-secondary' %>

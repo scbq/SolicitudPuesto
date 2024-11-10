@@ -1,0 +1,6 @@
+<!-- app/views/job_application_mailer/new_application_notification.html.erb -->
+<h1>Nueva Postulación Recibida</h1>
+<p>Detalles de la postulación:</p>
+<p>Descripción: <%= @application.description %></p>
+<p>Usuario: <%= @application.user.name %></p>
+<p>Oferta de Trabajo: <%= @application.job_offer.title %></p>

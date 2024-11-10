@@ -1,0 +1,18 @@
+<div class="container my-4">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h2 class="card-title"><i class="fas fa-user"></i> <%= @user.name %></h2>
+      <p class="card-text"><strong>Email:</strong> <%= @user.email %></p>
+      <p class="card-text"><strong>Rol:</strong> <%= @user.admin? ? "Administrador" : "Usuario" %></p>
+    </div>
+
+    <!-- Footer de la tarjeta con botones -->
+    <div class="card-footer d-flex justify-content-between flex-wrap">
+      <% if current_user.admin? %>
+        <%= link_to "Editar", edit_admin_user_path(@user), class: "btn btn-warning btn-sm flex-fill m-1" %>
+        <%= link_to "Eliminar", admin_user_path(@user), method: :delete, data: { confirm: "¿Estás seguro de eliminar este usuario?" }, class: "btn btn-danger btn-sm flex-fill m-1" %>
+      <% end %>
+      <%= link_to "Volver", admin_users_path, class: "btn btn-secondary btn-sm flex-fill m-1" %>
+    </div>
+  </div>
+</div>

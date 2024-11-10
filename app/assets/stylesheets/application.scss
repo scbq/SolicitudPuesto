@@ -1,0 +1,179 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+
+ */
+ /* app/assets/stylesheets/application.css */
+@import "bootstrap";
+
+/* Fondo para la vista de inicio de sesión */
+.sign-in-background {
+    background-image: url('/assets/background_image.jpg'); /* Cambia la URL a la imagen que desees usar */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Fondo para la tarjeta de administración */
+.admin-dashboard {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+/* Fondo general para la vista de administración */
+body {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNRkjkZRp4FWjrXyxYtTUUy6y5juPrx3olOA&s'); /* URL de una imagen o un color de fondo */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  background-color: rgba(245, 245, 245, 0.9); /* Añade un tono suave encima de la imagen */
+}
+
+/* pagina home/index */
+.admin-dashboard h2 {
+  font-weight: bold;
+  color: #333;
+}
+
+.btn {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease-in-out;
+  min-width: 100%;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Ajuste de altura uniforme para los botones */
+.d-flex .btn {
+  height: 100%;
+}
+
+/* Ajustes de estilo para el formulario de creación de usuarios */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.container h2 {
+  font-weight: bold;
+  color: #333;
+}
+
+.input-group-text {
+  background-color: #e9ecef;
+  border: none;
+}
+
+.form-control, .form-select {
+  border-left: 0;
+  box-shadow: none;
+}
+
+.btn {
+  font-size: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-lg {
+  padding: 0.75rem 1.25rem;
+}
+
+.d-grid {
+  gap: 15px;
+}
+
+/* Ajustes de estilo para el formulario de creación de publicaciones */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.container h2 {
+  font-weight: bold;
+  color: #333;
+}
+
+.input-group-text {
+  background-color: #e9ecef;
+  border: none;
+}
+
+.form-control, .form-select {
+  border-left: 0;
+  box-shadow: none;
+}
+
+.btn {
+  font-size: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-lg {
+  padding: 0.75rem 1.25rem;
+}
+
+.d-grid {
+  gap: 15px;
+}
+
+/* Ajuste de estilo para las tarjetas de ofertas de empleo */
+.card {
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.card-footer .btn {
+  width: 40px; /* Tamaño reducido para los botones */
+  margin: 0 3px; /* Ajusta el espacio entre botones */
+  padding: 5px 10px; /* Ajusta el padding interno de los botones */
+}
+
+/* Estilo para centrar y reducir el botón de nueva publicación */
+.btn-new-publication {
+  display: block;
+  width: fit-content; /* Ajusta el botón al tamaño del texto */
+  margin: 20px auto; /* Centra el botón horizontalmente */
+  padding: 8px 16px; /* Ajusta el padding interno */
+}

@@ -1,0 +1,31 @@
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="card p-4 shadow-lg" style="width: 100%; max-width: 400px;">
+    <h2 class="text-center">Iniciar Sesión</h2>
+
+    <%= form_with(model: resource, url: session_path(resource_name), local: true) do |f| %>
+      <div class="mb-3">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+      </div>
+
+      <div class="mb-3 form-check">
+        <%= f.check_box :remember_me, class: "form-check-input" %>
+        <%= f.label :remember_me, class: "form-check-label" %>
+      </div>
+
+      <div class="d-grid gap-2">
+        <%= f.submit "Iniciar Sesión", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+    <div class="mt-3 text-center">
+      <%= link_to "Olvidé mi Contraseña", new_user_password_path, class: "text-decoration-none" %> |
+      <%= link_to "Solicitar Registro", register_path, class: "text-decoration-none" %>
+    </div>
+  </div>
+</div>

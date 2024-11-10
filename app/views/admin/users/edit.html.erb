@@ -1,0 +1,21 @@
+<h1>Editar Usuario</h1>
+
+<%= form_with model: [:admin, @user], local: true do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, 'Nombre' %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :email, 'Email' %>
+    <%= form.email_field :email, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :role, 'Rol' %>
+    <%= form.select :role, User.roles.keys.map { |role| [role.titleize, role] }, {}, class: 'form-control' %>
+  </div>
+
+  <%= form.submit 'Actualizar Usuario', class: 'btn btn-primary' %>
+  <%= link_to 'Cancelar', admin_users_path, class: 'btn btn-secondary' %>
+<% end %>

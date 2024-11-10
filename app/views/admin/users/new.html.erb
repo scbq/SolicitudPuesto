@@ -1,0 +1,35 @@
+<div class="container my-5">
+  <div class="card shadow p-4 mx-auto" style="max-width: 600px;">
+    <h2 class="text-center mb-4">Crear Nuevo Usuario</h2>
+    <%= form_with model: @user, url: admin_users_path, local: true do |f| %>
+      <div class="mb-3">
+        <%= f.label :name, class: "form-label fw-bold" %>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+          <%= f.text_field :name, class: "form-control", placeholder: "Ingrese el nombre del usuario" %>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :email, class: "form-label fw-bold" %>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+          <%= f.email_field :email, class: "form-control", placeholder: "Ingrese el email del usuario" %>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :role, class: "form-label fw-bold" %>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-user-shield"></i></span>
+          <%= f.select :role, User.roles.keys.map { |role| [role.humanize, role] }, {}, class: "form-select" %>
+        </div>
+      </div>
+
+      <div class="d-grid gap-2 mt-4">
+        <%= f.submit "Crear Usuario", class: "btn btn-success btn-lg" %>
+        <%= link_to "Cancelar", admin_users_path, class: "btn btn-secondary btn-lg" %>
+      </div>
+    <% end %>
+  </div>
+</div>

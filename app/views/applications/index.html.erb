@@ -1,0 +1,16 @@
+<div class="container my-4">
+  <h2>Mis Postulaciones</h2>
+  <% if @applications.any? %>
+    <% @applications.each do |application| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Oferta: <%= application.job_offer.title %></h5>
+          <p class="card-text"><strong>Estado:</strong> <%= application.status.present? ? application.status : "En revisión" %></p>
+          <p class="card-text"><small class="text-muted">Postulado el: <%= application.created_at.strftime("%d/%m/%Y") %></small></p>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p class="text-muted">Aún no has realizado ninguna postulación.</p>
+  <% end %>
+</div>
