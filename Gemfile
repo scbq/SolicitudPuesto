@@ -61,7 +61,7 @@ end
 gem 'devise', '~> 4.9', '>= 4.9.4'
 
 gem "cancancan", "~> 3.6"
-gem "bootstrap", "~> 5.1.3"
+gem "bootstrap", "~> 5.3.3"
 gem "font-awesome-sass", "~> 6.0"
 gem "ostruct"
 gem "figaro"
