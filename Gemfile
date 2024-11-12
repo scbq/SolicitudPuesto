@@ -74,3 +74,6 @@ end
 
 gem 'jquery-rails'
 
+# Gemfile
+gem "hotwire-rails"
+gem "jsbundling-rails"

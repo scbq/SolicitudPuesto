@@ -20,9 +20,9 @@ class Admin::UsersController < ApplicationController
   # Crea un nuevo usuario
   def create
     @user = User.new(user_params)
-    generated_password = Devise.friendly_token.first(10) # Genera una contraseña aleatoria de 10 caracteres
+    generated_password = Devise.friendly_token.first(10)
     @user.password = generated_password
-
+  
     if @user.save
       RegistrationMailer.with(user: @user, password: generated_password).user_created_email.deliver_now
       redirect_to admin_users_path, notice: "Usuario creado y notificado con éxito."
@@ -31,6 +31,7 @@ class Admin::UsersController < ApplicationController
       render :new, alert: "Hubo un problema al crear el usuario."
     end
   end
+  
 
   # Formulario para editar un usuario específico
   def edit

@@ -1,0 +1,3 @@
+web: rails s
+js: bin/esbuild app/javascript --bundle --sourcemap --outdir=app/assets/builds --watch
+js: yarn build --watch
